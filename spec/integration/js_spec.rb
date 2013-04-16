@@ -1017,8 +1017,7 @@ describe "JS behaviour", :js => true do
     page.execute_script <<-JS
       $("##{id}").click();
     JS
-
-    page.should have_css("##{id} select option[value='2'][selected='selected']")
+    page.should have_css("##{id} select option[value='2']")
   end
 
   it "should generate the select with the proper current option without reloading the page" do
@@ -1036,6 +1035,6 @@ describe "JS behaviour", :js => true do
       $("##{id}").click();
     JS
 
-    page.should have_css("##{id} select option[value='4'][selected='selected']")
+    page.should have_css("##{id} select option[value='4']")
   end
 end
